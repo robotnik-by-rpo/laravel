@@ -5,7 +5,6 @@
 @section('content')
     <h1>Добавить музыкальную композицию</h1>
 
-    {{-- Вывод сообщения об успехе --}}
     @if(session('success'))
         <div class="success">{{ session('success') }}</div>
     @endif
