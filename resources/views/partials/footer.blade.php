@@ -1,3 +1,3 @@
 <div class="footer">
-    &copy; {{ date('Y') }} Music Collection. Version v1.0
+    &copy; {{ date('Y') }} Music Collection. Version v1.1
 </div>

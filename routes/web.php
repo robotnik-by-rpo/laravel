@@ -3,8 +3,10 @@
 use App\Http\Controllers\MusicController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/music/create', [MusicController::class, 'create'])->name('music.create');
+Route::redirect('/', '/music');
 
-Route::post('/music', [MusicController::class, 'store'])->name('music.store');
+Route::resource('music', MusicController::class)
+    ->parameters(['music' => 'track']);
 
-Route::get('/music', [MusicController::class, 'index'])->name('music.index');
+Route::post('music/{id}/restore', [MusicController::class, 'restore'])->name('music.restore');
+Route::delete('music/{id}/force', [MusicController::class, 'forceDelete'])->name('music.forceDelete');
